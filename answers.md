@@ -33,7 +33,25 @@ Place all written answers from this assignment here for easier grading.
 
 - **1b. (8 pts)**  
   
-  df
+  Markov's Inequality:    
+  
+  $P[X \geq \alpha] \leq \frac{E[X]}{\alpha}$  
+  
+  Quicksort Expected Comparisons:  
+  
+  $E[X] = O(n \log n)$  
+
+  Number of Comparisons We're Interested In:  
+
+  $\alpha = 10^cn \ln n$, $c > 0$  
+
+  Substitute into the Equation:  
+
+  $P[X \geq 10^cn \ln n] \leq \frac{O(n \log n)}{10^cn \ln n}$  
+
+  $\boxed{P[X \geq 10^cn \ln n] \leq O\left(\frac{1}{10^c}\right)}$  
+
+  The probability that Quicksort makes at least $10^cn \ln n$ comparisons is at most $O\left(\frac{1}{10^c}\right)$. As $c$ increases the upper probability bound decreases exponentially. This indicates that much of the expected work is concentrated below $10^cn \ln n$ comparisons.
 
 
 

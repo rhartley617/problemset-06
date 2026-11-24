@@ -9,7 +9,19 @@ Place all written answers from this assignment here for easier grading.
 
 
 
-- **1a. (7 pts)**
+- **1a. (7 pts)**  
+  
+  Markov's Inequality:    
+  
+  $P[X \geq \alpha] \leq \frac{E[X]}{\alpha}$  
+  
+  Quicksort Expected Comparisons:  
+  
+  $E[X] = O(n \log n)$  
+  
+
+
+
 
 
 

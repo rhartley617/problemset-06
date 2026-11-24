@@ -51,7 +51,7 @@ Place all written answers from this assignment here for easier grading.
 
   $\boxed{P[X \geq 10^cn \ln n] \leq O\left(\frac{1}{10^c}\right)}$  
 
-  The probability that Quicksort makes at least $10^cn \ln n$ comparisons is at most $O\left(\frac{1}{10^c}\right)$. As $c$ increases the upper probability bound decreases exponentially. This indicates that much of the expected work is concentrated below $10^cn \ln n$ comparisons.
+  The probability that Quicksort makes at least $10^cn \ln n$ comparisons is at most $O\left(\frac{1}{10^c}\right)$. As $c$ increases the upper probability bound decreases exponentially. This indicates that the actual number of comparisions is increasingly unlikely to greatly exceed the expected number of comparisons as c grows.
 
 
 

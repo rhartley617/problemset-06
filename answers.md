@@ -18,15 +18,22 @@ Place all written answers from this assignment here for easier grading.
   Quicksort Expected Comparisons:  
   
   $E[X] = O(n \log n)$  
+
+  Number of Comparisons We're Interested In:  
+
+  $\alpha = cn^2$, $c > 0$  
+
+  Substitute into the Equation:  
+
+  $P[X \geq cn^2] \leq \frac{O(n \log n)}{cn^2}$  
+
+  $\boxed{P[X \geq cn^2] \leq O\left(\frac{\log n}{n}\right)}$  
+
+  The probability that Quicksort makes $\Omega(n^2)$ comparisons is at most $O\left(\frac{\log n}{n}\right)$.
+
+- **1b. (8 pts)**  
   
-
-
-
-
-
-
-
-- **1b. (8 pts)**
+  df
 
 
 

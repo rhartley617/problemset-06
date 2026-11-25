@@ -65,7 +65,7 @@ Place all written answers from this assignment here for easier grading.
   3\. Check the result by using $C(A(I))$.  
   4\. If the reult is correct, return the result and report success.  
   5\. If the result is incorrect and $k = 0$, return no result and report failure.  
-  6\. decrement $k$ by 1, then restart the process at step 2.
+  6\. Decrement $k$ by 1, then restart the process at step 2.
 
 
 

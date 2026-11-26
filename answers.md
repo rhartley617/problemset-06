@@ -106,7 +106,14 @@ Place all written answers from this assignment here for easier grading.
 
   Probability Equation  
 
-  
+  Probability of success for one run: $\epsilon$  
+  Probability of failure for one run: $(1 - \epsilon)$  
+  Probability that the first successful run occurs on cycle $k$: $P(K = k) = (1 - \epsilon)^{k - 1} \cdot \epsilon$  
+  Expected value formula: $E[K] = \sum_{k=1}^{\infty} k \cdot P(K=k)$  
+  Substitute into expected value formula:  
+  $E[K] = \sum_{k=1}^{\infty} k(1-\epsilon)^{k-1}\epsilon$  
+  $E[K] = \epsilon \cdot \sum_{k=1}^{\infty} k(1-\epsilon)^{k-1}$  
+  Geometric series formula: 
 
 
 

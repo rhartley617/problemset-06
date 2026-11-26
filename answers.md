@@ -60,14 +60,20 @@ Place all written answers from this assignment here for easier grading.
   
   Alogrithm  
 
-  1\. Define number of cycles allowed as $k$.  
+  1\. Define number of cycles allowed as $k$. $k$ value selection is determined by the desired probability of success $\delta$.  
   2\. Run $A(I)$.  
   3\. Check the result by using $C(A(I))$.  
   4\. If the reult is correct, return the result and report success.  
   5\. If the result is incorrect and $k = 0$, return no result and report failure.  
   6\. Decrement $k$ by 1, then restart the process at step 2.
 
+  Probability Equation  
 
+  Desired Probability of success: $\delta$  
+  Probability of success for one run: $\epsilon$  
+  Probability of failure for one run: $(1 - \epsilon)$  
+  Probability that all runs fail: $(1 - \epsilon)^k$  
+  
 
 
 - **2b. (10 pts)**

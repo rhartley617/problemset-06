@@ -89,7 +89,7 @@ Place all written answers from this assignment here for easier grading.
   The total work for one cycle of $A(I)$ and C(A(I)): $W(n)$  
   Total number of cycles: $\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil$  
 
-  $W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil\right)$
+  $\boxed{W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil\right)}$
 
 
 

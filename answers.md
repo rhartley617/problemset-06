@@ -58,7 +58,7 @@ Place all written answers from this assignment here for easier grading.
 
 - **2a. (10 pts)**  
   
-  Alogrithm  
+  Alogrithm  $A'(I)$
 
   1\. Define number of cycles allowed as $k$. $k$ value selection is determined by the desired probability of success $\delta$.  
   2\. Run $A(I)$.  
@@ -73,7 +73,25 @@ Place all written answers from this assignment here for easier grading.
   Probability of success for one run: $\epsilon$  
   Probability of failure for one run: $(1 - \epsilon)$  
   Probability that all runs fail: $(1 - \epsilon)^k$  
-  
+  Probability of at least one successful run: $1 - (1 - \epsilon)^k$  
+
+  Solve for $k$:  
+
+  $1 - (1 - \epsilon)^k \geq \delta$  
+  $(1 - \epsilon)^k \leq 1 - \delta$  
+  $k \cdot \log(1 - \epsilon) \leq \log(1 - \delta)$  
+  $k \geq \frac{\log(1 - \delta)}{\log(1 - \epsilon)}$  
+
+  $\boxed{k = \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil}$  
+
+  Work for $A'(I)$  
+
+  The total work for one cycle of $A(I)$ and C(A(I)): $W(n)$  
+  Total number of cycles: $\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil$  
+
+  $W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil\right)$
+
+
 
 
 - **2b. (10 pts)**

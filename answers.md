@@ -95,7 +95,19 @@ Place all written answers from this assignment here for easier grading.
 
 
 
-- **2b. (10 pts)**
+- **2b. (10 pts)**  
+  
+  Algorithm  $A''(I)$  
+
+  1\. Run $A(I)$.  
+  2\. Check the result by using $C(A(I))$.  
+  3\. If the reult is correct, return the result and report success. END  
+  4\. Restart the process at step 1.  
+
+  Probability Equation  
+
+  
+
 
 
 

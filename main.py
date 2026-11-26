@@ -11,7 +11,32 @@ def ssort(L):
 
 def qsort(a, pivot_fn):
     ## TO DO
-    pass
+    # Use an explicit stack to avoid Python's recursion limit.
+    result = []
+    stack = [list(a)]
+
+    while stack:
+        values = stack.pop()
+        if isinstance(values, tuple):
+            result.extend(values[0])
+            continue
+        if len(values) <= 1:
+            result.extend(values)
+            continue
+
+        pivot = pivot_fn(values)
+        less = [x for x in values if x < pivot]
+        equal = [x for x in values if x == pivot]
+        greater = [x for x in values if x > pivot]
+
+        # Stack order is reversed so the smaller values are processed first.
+        # Equal values can be emitted directly without further partitioning.
+        stack.append(greater)
+        stack.append((equal,))
+        stack.append(less)
+
+
+    return result
     
 def time_search(sort_fn, mylist):
     """
@@ -47,9 +72,9 @@ def compare_sort(sizes=[100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 10
       for each method to run on each value of n
     """
     ### TODO - sorting algorithms for comparison
-    qsort_fixed_pivot = # 
-    qsort_random_pivot = #
-    tim_sort = #
+    qsort_fixed_pivot = lambda a: qsort(a, lambda values: values[0])
+    qsort_random_pivot = lambda a: qsort(a, random.choice)
+    tim_sort = sorted
     result = []
     for size in sizes:
         # create list in ascending order

@@ -87,7 +87,7 @@ Place all written answers from this assignment here for easier grading.
 
   Work for $A'(I)$  
 
-  The total worst case work for one cycle of $A(I)$ and C(A(I)): $O(W(n))$  
+  The total worst case work for one cycle of $A(I)$ and $C(A(I))$: $O(W(n))$  
   Maximum number of cycles: $\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil$  
 
   $\boxed{W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \left\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\right\rceil\right)}$
@@ -113,7 +113,24 @@ Place all written answers from this assignment here for easier grading.
   Substitute into expected value formula:  
   $E[K] = \sum_{k=1}^{\infty} k(1-\epsilon)^{k-1}\epsilon$  
   $E[K] = \epsilon \cdot \sum_{k=1}^{\infty} k(1-\epsilon)^{k-1}$  
-  Geometric series formula: 
+  Geometric series formula: $\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}$  
+  Derivative of geometric series formula: $\sum_{k=1}^{\infty} kx^{k-1} = \frac{1}{(1-x)^2}$  
+  Substitute into formula:  
+  $E[K] = \epsilon \cdot \frac{1}{(1-(1-\epsilon))^2}$  
+  $E[K] =  \frac{\epsilon}{(1 - 1+ \epsilon)^2}$  
+  Expected cycles:  
+  ${E[K] = \frac{1}{\epsilon}}$  
+
+  Expected Work for $A''(I)$:  
+  
+  The total worst case work for one cycle of $A(I)$ and $C(A(I))$: $O(W(n))$  
+  Expected number of cycles: $\frac{1}{\epsilon}$  
+  Expected work:  
+
+  $\boxed{E[W_{A''}(n,\epsilon)] \in O\left(\frac{W(n)}{\epsilon}\right)}$
+
+
+
 
 
 

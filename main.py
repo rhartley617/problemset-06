@@ -99,5 +99,6 @@ def print_results(results):
 def test_print():
     print_results(compare_sort())
 
+
 random.seed()
 test_print()

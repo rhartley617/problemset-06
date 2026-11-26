@@ -58,14 +58,15 @@ Place all written answers from this assignment here for easier grading.
 
 - **2a. (10 pts)**  
   
-  Alogrithm  $A'(I)$
+  Algorithm  $A'(I)$
 
-  1\. Define number of cycles allowed as $k$. $k$ value selection is determined by the desired probability of success $\delta$.  
+  1\. Define maximum number of cycles allowed as $k$. $k$ value selection is determined by the desired probability of success $\delta$.  
   2\. Run $A(I)$.  
   3\. Check the result by using $C(A(I))$.  
-  4\. If the reult is correct, return the result and report success.  
-  5\. If the result is incorrect and $k = 0$, return no result and report failure.  
-  6\. Decrement $k$ by 1, then restart the process at step 2.
+  4\. If the reult is correct, return the result and report success. END  
+  5\. Decrement $k$ by 1.  
+  6\. If $k = 0$, return no result and report failure.  END  
+  7\. Restart the process at step 2.
 
   Probability Equation  
 
@@ -82,14 +83,14 @@ Place all written answers from this assignment here for easier grading.
   $k \cdot \log(1 - \epsilon) \leq \log(1 - \delta)$  
   $k \geq \frac{\log(1 - \delta)}{\log(1 - \epsilon)}$  
 
-  $\boxed{k = \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil}$  
+  $\boxed{k = \left\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\right\rceil}$  
 
   Work for $A'(I)$  
 
-  The total work for one cycle of $A(I)$ and C(A(I)): $W(n)$  
-  Total number of cycles: $\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil$  
+  The total worst case work for one cycle of $A(I)$ and C(A(I)): $O(W(n))$  
+  Maximum number of cycles: $\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil$  
 
-  $\boxed{W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\rceil\right)}$
+  $\boxed{W_{A'}(n, \delta, \epsilon) \in O\left(W(n)\cdot \left\lceil\frac{\log(1 - \delta)}{\log(1 - \epsilon)}\right\rceil\right)}$
 
 
 

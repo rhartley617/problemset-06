@@ -139,9 +139,27 @@ Place all written answers from this assignment here for easier grading.
 
   | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
   |---|---|---|---|
-  | qsort_fixed_pivot | $\Theta(n \lg n)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |
-  | qsort_random_pivot | $\Theta(n \lg n)$ | $\Theta(n \lg n)$ | $\Theta(n^2)$ |
+  | qsort_fixed_pivot | $\Theta(n \log n)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |
+  | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
   | ssort | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |  
+
+  These results highlight the peformance benefits of using quick sort algorithms over selection sort, while also showing the effects that maximally unbalanced partition sizes can have on a quicksort algorithm.  
+
+  The runtimes oberved in the two test runs are consistent with what we'd expect to see. For $\Theta(n \log n)$ asymptotic bounds, we see approximately double the running time when we double the input size. For $\Theta(n^2)$ asymptotic bounds, each doubling of input size results in an approximate quadrupling of running time. 
   
+  qsort_fixed_pivot always takes the first element as the pivot point. qsort_random_pivot chooses a random pivot point each time it runs. ssort works its way through a list by finding the smallest value in the remaining unsorted portion of the list and swapping it with the element at the current index. This process continues until the entire list is sorted..  
+
+  These differences matter for qsort_fixed_pivot when we go from using a sorted list to a randomized list.
+  
+  For a sorted list, picking the first entry as the pivot point for each run as qsort_fixed_pivot does automatically picks the smallest number each time. This leads to a maximally unbalanced pivot that contains $0$ entries on one side and $(n-1)$ entries on the other. The result is that qsort_fixed_pivot is essentially doing the same thing as ssort; finding the smallest entry, removing it, and reprocessing the rest of the list. This results in a similar asymptotic growth rate in the number of comparisons required to sort the list, and so both ssort and qsort_fixed_pivot have a runtime of $\Theta(n^2)$. For qsort_random_pivot, a presorted list doesn't matter because it will still choose the pivot at random, and so we can still expect good partitiion sizes of with the larger one being around $\frac{3n}{4}$ and the corresponding $\Theta(n \log n)$ runtime.  
+
+  For a randomized input list, things change with qsort_fixed_pivot, but not for ssort or qsort_random_pivot. Because the input list is randomized instead of sorted, qsort_fixed_pivot is effectively functioning in the same manner as qsort_random_pivot because the first element of the input that it will use as a pivot is now a random element each time as opposed to being the smallest element each time. This results in an expected larger partition size of approximately $\frac{3n}{4}$ and the same expected $\Theta(n \log n)$ runtime we see with qsort_random_pivot.
+
+ 
+
+  
+
+
+
 
 - **3c. (5 pts)**

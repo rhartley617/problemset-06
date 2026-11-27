@@ -153,13 +153,8 @@ Place all written answers from this assignment here for easier grading.
   
   For a sorted list, picking the first entry as the pivot point for each run as qsort_fixed_pivot does automatically picks the smallest number each time. This leads to a maximally unbalanced partition that contains $0$ entries on one side and $(n-1)$ entries on the other. The result is that qsort_fixed_pivot is essentially doing the same thing as ssort; finding the smallest entry, removing it, and reprocessing the rest of the list. This results in a similar asymptotic growth rate in the number of comparisons required to sort the list, and so both ssort and qsort_fixed_pivot have a runtime of $\Theta(n^2)$. For qsort_random_pivot, a presorted list doesn't matter because it will still choose the pivot at random, and so .we can still expect the larger partition to have a size of approximately $\frac{3n}{4}$, with a corresponding $\Theta(n \log n)$ expected runtime.  
 
-  For a randomized input list, the expected asymptotic runtime changes for qsort_fixed_pivot, but remains the same for ssort and qsort_random_pivot. Because the input list is randomized instead of sorted, qsort_fixed_pivot is effectively functioning in the same manner as qsort_random_pivot because the first element of the input that it will use as a pivot is now a random element each time as opposed to being the smallest element each time. This results in an expected larger partition size of approximately $\frac{3n}{4}$ and the same expected $\Theta(n \log n)$ runtime we see with qsort_random_pivot.
+  For a randomized input list, the expected asymptotic runtime changes for qsort_fixed_pivot, but remains the same for ssort and qsort_random_pivot. Because the input list is randomized instead of sorted, qsort_fixed_pivot is effectively functioning in the same manner as qsort_random_pivot because the first element of the input that it will use as a pivot is now a random element each time as opposed to being the smallest element each time. This results in an expected larger partition size of approximately $\frac{3n}{4}$ and the same expected $\Theta(n \log n)$ runtime we see with qsort_random_pivot.  
 
- 
-
+- **3c. (5 pts)**  
   
-
-
-
-
-- **3c. (5 pts)**
+  

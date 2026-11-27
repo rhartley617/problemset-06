@@ -135,6 +135,13 @@ Place all written answers from this assignment here for easier grading.
   ![Sorted Run](Sorted_3b_112726.png)
 
   Random Run  
-  ![Random Run](Randomized_3b_112726.png)
+  ![Random Run](Randomized_3b_112726.png)  
+
+  | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
+  |---|---|---|---|
+  | qsort_fixed_pivot | $\Theta(n \lg n)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |
+  | qsort_random_pivot | $\Theta(n \lg n)$ | $\Theta(n \lg n)$ | $\Theta(n^2)$ |
+  | ssort | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |  
+  
 
 - **3c. (5 pts)**

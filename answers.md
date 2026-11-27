@@ -129,9 +129,12 @@ Place all written answers from this assignment here for easier grading.
 
   $\boxed{E[W_{A''}(n,\epsilon)] \in O\left(\frac{W(n)}{\epsilon}\right)}$
 
-- **3b. (5 pts)**
+- **3b. (5 pts)**  
+  
+  Sorted Run  
+  ![Sorted Run](Sorted_3b_112726.png)
 
-
-
+  Random Run  
+  ![Random Run](Randomized_3b_112726.png)
 
 - **3c. (5 pts)**

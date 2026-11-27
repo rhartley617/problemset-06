@@ -11,7 +11,7 @@ def ssort(L):
 
 def qsort(a, pivot_fn):
     ## TO DO
-    # Use an explicit stack to avoid Python's recursion limit.
+
     result = []
     stack = [list(a)]
 
@@ -30,7 +30,7 @@ def qsort(a, pivot_fn):
         greater = [x for x in values if x > pivot]
 
         # Stack order is reversed so the smaller values are processed first.
-        # Equal values can be emitted directly without further partitioning.
+        # Equal values go in as a single tuple so they aren't processed again.
         stack.append(greater)
         stack.append((equal,))
         stack.append(less)

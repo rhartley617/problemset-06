@@ -80,12 +80,13 @@ def compare_sort(sizes=[100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 10
         # create list in ascending order
         mylist = list(range(size))
         # shuffles list if needed
-        random.shuffle(mylist)
+        # random.shuffle(mylist)
         result.append([
             len(mylist),
-            time_search(qsort_fixed_pivot, mylist.copy()),
+            # time_search(qsort_fixed_pivot, mylist.copy()),
             time_search(qsort_random_pivot, mylist.copy()),
-            time_search(ssort, mylist.copy())
+            # time_search(ssort, mylist.copy())
+            time_search(tim_sort, mylist.copy())
         ])
     return result
     ###
@@ -93,7 +94,8 @@ def compare_sort(sizes=[100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 10
 def print_results(results):
     """ change as needed for comparisons """
     print(tabulate.tabulate(results,
-                            headers=['n', 'qsort-fixed-pivot', 'qsort-random-pivot', 'ssort'],
+                            # headers=['n', 'qsort-fixed-pivot', 'qsort-random-pivot', 'ssort'],
+                            headers=['n', 'qsort-random-pivot', 'tim_sort'],
                             floatfmt=".3f",
                             tablefmt="github"))
 

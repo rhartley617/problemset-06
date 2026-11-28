@@ -137,11 +137,11 @@ Place all written answers from this assignment here for easier grading.
   Random Run  
   ![Random Run](Randomized_3b_112726.png)  
 
-  | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
-  |---|---|---|---|
-  | qsort_fixed_pivot | $\Theta(n \log n)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |
-  | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
-  | ssort | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |  
+    | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
+    |---|---|---|---|
+    | qsort_fixed_pivot | $\Theta(n \log n)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |
+    | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
+    | ssort | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |  
 
   These results highlight the performance benefits of using quicksort algorithms over selection sort, while also showing the effects that maximally unbalanced partition sizes can have on a quicksort algorithm.  
 
@@ -163,14 +163,14 @@ Place all written answers from this assignment here for easier grading.
   Random Run  
   ![Random Run](Randomized_3c_112726.png)  
   
-  | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
-  |---|---|---|---|
-  | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
-  | tim_sort | $\Theta(n \log n)$ | $\Theta(n)$ | $\Theta(n \log n)$ |  
+    | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
+    |---|---|---|---|
+    | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
+    | tim_sort | $\Theta(n \log n)$ | $\Theta(n)$ | $\Theta(n \log n)$ |  
 
   The results we see are generally consistent with the theoretical asymptotic bounds. qsort-random-pivot moves a little slower on the random run than on the sorted run, but this is likely due to a combination of random chance and other processes running on the machine at the same time as the test runs because qsort_random_pivot selects the pivot randomly whether the input is randomized or already sorted and has the same $\Theta(n \log n)$ expected runtime in either situation. Overall, the growth pattern observed in each qsort-random-pivot run does match what we'd expect to see based on the asymptotic bounds; a doubling of run time with a doubling of input that is consistent with $\Theta(n \log n)$ expected runtime.  
 
-  We see a similar approximate doubling of runtime when we double the input size with tim_sort, which is also what we'd expect to see based on tim_sort having the same expected runtime for randomized data ($\Theta(n \log n)$) as qsort-random-pivot and a similar although slightly lower growth rate of $\Theta(n)$ for sorted data.  
+  We see a similar approximate doubling of runtime when we double the input size with tim_sort, which is also what we'd expect to see based on tim_sort having the same expected runtime for randomized data ($\Theta(n \log n)$) as qsort-random-pivot and a similar although lower growth rate of $\Theta(n)$ for sorted data.  
 
   While the growth pattern for runtime relative to input size is for the most part similar between the two algorithms, we see that tim_sort has a much smaller runtime than qsort-random-pivot overall. Two algorithms that have the same asymptotic bound for growth are not going to necessarily have the same overall cost even though the growth rate of that cost relative to input size may be the same. The main difference here is that, unlike qsort-random-pivot, tim_sort can take advantage of pre-sorted runs in the data when they occur to the point where the expected asymptotic bound goes down to $\Theta(n)$ for tim_sort when the input is pre-sorted prior to a run. This ability to use sorted runs when they are available in order to reduce overall runtime also likely explains in part why tim_sort has a lower runtime overall than qsort-random-pivot whether the data being processed is already sorted or not, particularly with large inputs $n$. Even random data can contain runs, and every time tim_sort encounters one of these already sorted runs, it gains a speed boost that qsort-random-pivot isn't going to get for that part of the input.  
 

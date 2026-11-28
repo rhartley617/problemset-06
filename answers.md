@@ -156,5 +156,10 @@ Place all written answers from this assignment here for easier grading.
   For a randomized input list, the expected asymptotic runtime changes for qsort_fixed_pivot, but remains the same for ssort and qsort_random_pivot. Because the input list is randomized instead of sorted, qsort_fixed_pivot is effectively functioning in the same manner as qsort_random_pivot because the first element of the input that it will use as a pivot is now a random element each time as opposed to being the smallest element each time. This results in an expected larger partition size of approximately $\frac{3n}{4}$ and the same expected $\Theta(n \log n)$ runtime we see with qsort_random_pivot.  
 
 - **3c. (5 pts)**  
-  
+
+    Sorted Run  
+  ![Sorted Run](Sorted_3c_112726.png)
+
+  Random Run  
+  ![Random Run](Randomized_3c_112726.png)  
   

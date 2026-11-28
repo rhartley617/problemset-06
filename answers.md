@@ -51,7 +51,7 @@ Place all written answers from this assignment here for easier grading.
 
   $\boxed{P[X \geq 10^cn \ln n] \leq O\left(\frac{1}{10^c}\right)}$  
 
-  The probability that Quicksort makes at least $10^cn \ln n$ comparisons is at most $O\left(\frac{1}{10^c}\right)$. As $c$ increases the upper probability bound decreases exponentially. This indicates that the actual number of comparisions is increasingly unlikely to greatly exceed the expected number of comparisons as c grows.
+  The probability that Quicksort makes at least $10^cn \ln n$ comparisons is at most $O\left(\frac{1}{10^c}\right)$. As $c$ increases the upper probability bound decreases exponentially. This indicates that the actual number of comparisons is increasingly unlikely to greatly exceed the expected number of comparisons as c grows.
 
 
 
@@ -63,7 +63,7 @@ Place all written answers from this assignment here for easier grading.
   1\. Define maximum number of cycles allowed as $k$. $k$ value selection is determined by the desired probability of success $\delta$.  
   2\. Run $A(I)$.  
   3\. Check the result by using $C(A(I))$.  
-  4\. If the reult is correct, return the result and report success. END  
+  4\. If the result is correct, return the result and report success. END  
   5\. Decrement $k$ by 1.  
   6\. If $k = 0$, return no result and report failure.  END  
   7\. Restart the process at step 2.
@@ -101,7 +101,7 @@ Place all written answers from this assignment here for easier grading.
 
   1\. Run $A(I)$.  
   2\. Check the result by using $C(A(I))$.  
-  3\. If the reult is correct, return the result and report success. END  
+  3\. If the result is correct, return the result and report success. END  
   4\. Restart the process at step 1.  
 
   Probability Equation  
@@ -143,15 +143,15 @@ Place all written answers from this assignment here for easier grading.
   | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
   | ssort | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(n^2)$ |  
 
-  These results highlight the peformance benefits of using quick sort algorithms over selection sort, while also showing the effects that maximally unbalanced partition sizes can have on a quicksort algorithm.  
+  These results highlight the performance benefits of using quicksort algorithms over selection sort, while also showing the effects that maximally unbalanced partition sizes can have on a quicksort algorithm.  
 
-  The runtimes oberved in the two test runs are consistent with what we'd expect to see. For $\Theta(n \log n)$ asymptotic bounds, we see approximately double the running time when we double the input size. For $\Theta(n^2)$ asymptotic bounds, each doubling of input size results in an approximate quadrupling of running time. 
+  The runtimes observed in the two test runs are consistent with what we'd expect to see. For $\Theta(n \log n)$ asymptotic bounds, we see approximately double the running time when we double the input size. For $\Theta(n^2)$ asymptotic bounds, each doubling of input size results in an approximate quadrupling of running time. 
   
   qsort_fixed_pivot always takes the first element as the pivot point. qsort_random_pivot chooses a random pivot point for each partitioning operation. ssort works its way through a list by finding the smallest value in the remaining unsorted portion of the list and swapping it with the element at the current index. This process continues until the entire list is sorted.  
 
   These differences matter for qsort_fixed_pivot when we go from using a sorted list to a randomized list.
   
-  For a sorted list, picking the first entry as the pivot point for each run as qsort_fixed_pivot does automatically picks the smallest number each time. This leads to a maximally unbalanced partition that contains $0$ entries on one side and $(n-1)$ entries on the other. The result is that qsort_fixed_pivot is essentially doing the same thing as ssort; finding the smallest entry, removing it, and reprocessing the rest of the list. This results in a similar asymptotic growth rate in the number of comparisons required to sort the list, and so both ssort and qsort_fixed_pivot have a runtime of $\Theta(n^2)$. For qsort_random_pivot, a presorted list doesn't matter because it will still choose the pivot at random, and so .we can still expect the larger partition to have a size of approximately $\frac{3n}{4}$, with a corresponding $\Theta(n \log n)$ expected runtime.  
+  For a sorted list, picking the first entry as the pivot point for each run as qsort_fixed_pivot does automatically picks the smallest number each time. This leads to a maximally unbalanced partition that contains $0$ entries on one side and $(n-1)$ entries on the other. The result is that qsort_fixed_pivot is essentially doing the same thing as ssort; finding the smallest entry, removing it, and reprocessing the rest of the list. This results in a similar asymptotic growth rate in the number of comparisons required to sort the list, and so both ssort and qsort_fixed_pivot have a runtime of $\Theta(n^2)$. For qsort_random_pivot, a presorted list doesn't matter because it will still choose the pivot at random, and so we can still expect the larger partition to have a size of approximately $\frac{3n}{4}$, with a corresponding $\Theta(n \log n)$ expected runtime.  
 
   For a randomized input list, the expected asymptotic runtime changes for qsort_fixed_pivot, but remains the same for ssort and qsort_random_pivot. Because the input list is randomized instead of sorted, qsort_fixed_pivot is effectively functioning in the same manner as qsort_random_pivot because the first element of the input that it will use as a pivot is now a random element each time as opposed to being the smallest element each time. This results in an expected larger partition size of approximately $\frac{3n}{4}$ and the same expected $\Theta(n \log n)$ runtime we see with qsort_random_pivot.  
 
@@ -172,8 +172,8 @@ Place all written answers from this assignment here for easier grading.
 
   We see a similar approximate doubling of runtime when we double the input size with tim_sort, which is also what we'd expect to see based on tim_sort having the same expected runtime for randomized data ($\Theta(n \log n)$) as qsort-random-pivot and a similar although slightly lower growth rate of $\Theta(n)$ for sorted data.  
 
-  While the growth pattern for runtime relative to input size is for the most part similar between the two algorithms, we see that tim_sort has a much smaller runtime than qsort-random-pivot overall. Two algorithms that have the same asymptotic bound for growth are not going to necessarily have the same overall cost even though the growth rate of that cost relative to input size may be the same. The main difference here is that, unlike qsort-random-pivot, tim_sort can take advantage of pre-sorted runs in the data when they occur to the point where the expected asymptotic bound goes down to $\Theta(n)$ for tim_sort when the input is pre-sorted prior to a run. This ability to use sorted runs when they are available in order to reduce overall runtime also likely explains in part why tim_sort has a lower runtime overall than qsort-random-pivot whether the data being processed is already sorted or not, paritularly with large inputs $n$. Even random data can contain runs, and every time tim_sort encounters one of these already sorted runs, it gains a speed boost that qsort-random-pivot isn't going to get for that part of the input.  
+  While the growth pattern for runtime relative to input size is for the most part similar between the two algorithms, we see that tim_sort has a much smaller runtime than qsort-random-pivot overall. Two algorithms that have the same asymptotic bound for growth are not going to necessarily have the same overall cost even though the growth rate of that cost relative to input size may be the same. The main difference here is that, unlike qsort-random-pivot, tim_sort can take advantage of pre-sorted runs in the data when they occur to the point where the expected asymptotic bound goes down to $\Theta(n)$ for tim_sort when the input is pre-sorted prior to a run. This ability to use sorted runs when they are available in order to reduce overall runtime also likely explains in part why tim_sort has a lower runtime overall than qsort-random-pivot whether the data being processed is already sorted or not, particularly with large inputs $n$. Even random data can contain runs, and every time tim_sort encounters one of these already sorted runs, it gains a speed boost that qsort-random-pivot isn't going to get for that part of the input.  
 
-  Another factor worth noting is that tim_sort, Python's built in sorting function, is implemented in optimized C, wheras our implementation of qsort-random-pivot is written in Python. This likely also plays a role in making tim_sort more performant than qsort-random-pivot overall.
+  Another factor worth noting is that tim_sort, Python's built in sorting function, is implemented in optimized C, whereas our implementation of qsort-random-pivot is written in Python. This likely also plays a role in making tim_sort more performant than qsort-random-pivot overall.
 
 

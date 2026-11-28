@@ -157,9 +157,17 @@ Place all written answers from this assignment here for easier grading.
 
 - **3c. (5 pts)**  
 
-    Sorted Run  
+  Sorted Run  
   ![Sorted Run](Sorted_3c_112726.png)
 
   Random Run  
   ![Random Run](Randomized_3c_112726.png)  
   
+  | Algorithm | Randomly ordered input (expected runtime) | Sorted input (expected runtime) | Worst case runtime |
+  |---|---|---|---|
+  | qsort_random_pivot | $\Theta(n \log n)$ | $\Theta(n \log n)$ | $\Theta(n^2)$ |
+  | tim_sort | $\Theta(n \log n)$ | $\Theta(n)$ | $\Theta(n \log n)$ |  
+
+  
+
+
